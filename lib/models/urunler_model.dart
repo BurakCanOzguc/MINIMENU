@@ -22,8 +22,11 @@ class Urun {
   final int kategori;
   final String isim;
   final String fiyat;
+  final String onAciklama;
+  final String aciklama;
   final String resim;
-  Urun(this.id, this.kategori, this.isim, this.fiyat, this.resim);
+  Urun(this.id, this.kategori, this.isim, this.fiyat, this.onAciklama,
+      this.aciklama, this.resim);
 
 //Urun class'ımızı jsonla eşitlemek için yapılan işlem
   Urun.fromJson(Map<String, dynamic> json)
@@ -31,6 +34,8 @@ class Urun {
         kategori = json['kategori'],
         isim = json['isim'],
         fiyat = json['fiyat'],
+        onAciklama = json['onAciklama'],
+        aciklama = json['aciklama'],
         resim = json['resim'];
 //Urun class'ımızı jsonla eşitlemek için yapılan işlem
 }

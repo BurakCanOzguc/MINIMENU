@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:minimenu/models/urun_detay_sayfasi.dart';
 import 'package:minimenu/models/urunler_model.dart';
 
 class HomePage extends StatefulWidget {
@@ -135,6 +136,12 @@ class _HomePageState extends State<HomePage> {
       itemBuilder: (context, index) {
         final Urun urun = _urunler[index];
         return ListTile(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: ((context) => UrunDetaySayfasi(urun: urun))));
+          },
           leading: Image.network(
             urun.resim,
             width: 50,
@@ -142,7 +149,15 @@ class _HomePageState extends State<HomePage> {
             fit: BoxFit.cover,
           ),
           title: Text(urun.isim),
-          subtitle: Text(urun.fiyat),
+          subtitle: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                urun.fiyat,
+              ),
+              Text(urun.onAciklama)
+            ],
+          ),
         );
       },
       separatorBuilder: (context, index) => const Divider(
