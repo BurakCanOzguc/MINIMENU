@@ -5,14 +5,14 @@ import 'package:flutter/services.dart';
 import 'package:minimenu/models/urun_detay_sayfasi.dart';
 import 'package:minimenu/models/urunler_model.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class MenuPage extends StatefulWidget {
+  const MenuPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<MenuPage> createState() => _MenuPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MenuPageState extends State<MenuPage> {
   UrunlerModel? _veriler;
   List<Urun> _urunler = [];
 
@@ -48,6 +48,7 @@ class _HomePageState extends State<HomePage> {
     double deviceHeight = MediaQuery.of(context).size.height;
     double deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.green.shade400,
       appBar: AppBar(
         toolbarHeight: deviceHeight / 35,
         backgroundColor: const Color.fromARGB(255, 116, 115, 115),
